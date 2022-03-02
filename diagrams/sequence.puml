@@ -1,0 +1,23 @@
+@startuml
+title "Flow 1"
+autonumber
+actor           "User 1" as U1
+actor           "User 2" as U2
+box             "Box 1" #FFFFEE
+boundary        "Load Balancer" as LB
+collections     "Service 1" as S1
+end box
+
+box             "Box 2" #EEFFFF
+database        "Database 1" as DB1
+end box
+queue           "             " as Q1
+
+== Phase 1 ==
+
+U1   ->  LB     : Request 1
+LB   -->  S1     : Request 1
+
+== Phase 2 ==
+
+@enduml

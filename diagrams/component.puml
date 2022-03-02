@@ -1,0 +1,22 @@
+@startuml
+skinparam componentStyle rectangle
+
+cloud {
+  component "User A" as UA
+  component "User B" as UB
+}
+
+package "Servers" {
+  component "Web Server A" as WA
+  component "Web Server B" as WB
+}
+
+package "Data stores" {
+  database "Shard 1" as S1
+  database "Shard 2" as S2
+}
+
+UA --> WA
+WA --> S1
+@enduml
+
